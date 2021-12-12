@@ -15,7 +15,7 @@ public class Task2 {
         LessonHelper lp = new LessonHelper();
 
         // Инициализация массива путем подсчета кол-ва нечетных чисел
-        int[] array = lp.initializeArray(countOddNumbers(100));
+        int[] array = lp.initializeArray(lp.countOddNumbers(100));
 
         // Заполнение массива нечетными числами
         array = fillArrayWithOddNumbers(array);
@@ -23,15 +23,7 @@ public class Task2 {
         // Вывод массива в обычном и обратном порядке
         lp.printArrayElementsHorizontally(array);
         System.out.println();
-        printArrayElementsBackwardsAndHorizontally(array);
-    }
-
-    public static int countOddNumbers(int countUntil) {
-        int counter = 0;
-        for (int i = 0; i <= countUntil; i++) {
-            if (i % 2 == 1) counter++;
-        }
-        return counter;
+        printArrayElementsBackwardsHorizontally(array);
     }
 
     public static int[] fillArrayWithOddNumbers(int[] arrayToFill) {
@@ -45,7 +37,7 @@ public class Task2 {
         return arrayToFill;
     }
 
-    public static void printArrayElementsBackwardsAndHorizontally(int[] arrayToPrint) {
+    public static void printArrayElementsBackwardsHorizontally(int[] arrayToPrint) {
         for (int i = arrayToPrint.length - 1; i >= 0; i--) {
             System.out.print(arrayToPrint[i] + " ");
         }

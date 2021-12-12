@@ -31,8 +31,7 @@ public class Task7 {
     public static int indexOfHighestValueInArray(int[] array) {
         int highestValueIndex = 0;
         for (int i = 0; i < array.length - 1; i++) {
-            if (array[i] > array[i + 1] && array[i] >= array[highestValueIndex]) highestValueIndex = i;
-            else if (array[i] < array[i + 1] && array[i + 1] >= array[highestValueIndex]) highestValueIndex = i + 1;
+            if (array[i] >= array[highestValueIndex]) highestValueIndex = i;
         }
         return highestValueIndex;
     }

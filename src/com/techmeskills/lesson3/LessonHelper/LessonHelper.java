@@ -41,4 +41,20 @@ public class LessonHelper {
         }
         return arraySum/array.length;
     }
+
+    public static int countOddNumbers(int countUntil) {
+        int counter = 0;
+        for (int i = 0; i <= countUntil; i++) {
+            if (i % 2 == 1) counter++;
+        }
+        return counter;
+    }
+
+    public static int countOddNumbers(int[] countOddInArray) {
+        int counter = 0;
+        for (int i = 0; i < countOddInArray.length; i++) {
+            if (countOddInArray[i] % 2 == 1) counter++;
+        }
+        return counter;
+    }
 }

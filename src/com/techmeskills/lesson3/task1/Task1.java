@@ -15,7 +15,7 @@ public class Task1 {
         LessonHelper lp = new LessonHelper();
 
         // Инициализация массива путем подсчета кол-ва четных чисел
-        int[] array = lp.initializeArray(countEvenNumbers(20));
+        int[] array = lp.initializeArray(countEvenNumbers(2,20));
 
         // Заполнение массива четными числами
         array = fillArrayWithEvenNumbers(array);
@@ -26,21 +26,21 @@ public class Task1 {
         printArrayElementsVertically(array);
     }
 
-    public static int countEvenNumbers(int countUntil) {
+    public static int countEvenNumbers(int countFrom, int countUntil) {
         int counter = 0;
-        for (int i = 0; i <= countUntil; i++) {
-            if (i % 2 == 0 && i != 0) counter++;
+        for (int i = countFrom; i <= countUntil; i++) {
+            if (i % 2 == 0) counter++;
         }
         return counter;
     }
 
     public static int[] fillArrayWithEvenNumbers(int[] arrayToFill) {
-        int arrayCounter = 0;
-        for (int i = 0; i <= arrayToFill.length * 2; i++) {
-            if (i % 2 == 0 && i != 0) {
+        for (int i = 0, arrayCounter = 0; i <= arrayToFill.length * 2;) {
+            i+=2;
+            if (arrayCounter < arrayToFill.length) {
                 arrayToFill[arrayCounter] = i;
-                arrayCounter++;
             }
+            arrayCounter++;
         }
         return arrayToFill;
     }

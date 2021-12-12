@@ -24,14 +24,8 @@ public class Task3 {
         System.out.println("Четных чисел - " + lp.countEvenNumbers(array));
 
         //Вывод кол-ва нечетных чисел
-        System.out.println("Нечетных чисел - " + countOddNumbers(array));
+        System.out.println("Нечетных чисел - " + lp.countOddNumbers(array));
     }
 
-    public static int countOddNumbers(int[] countOddInArray) {
-        int counter = 0;
-        for (int i = 0; i < countOddInArray.length; i++) {
-            if (countOddInArray[i] % 2 == 1) counter++;
-        }
-        return counter;
-    }
+
 }
