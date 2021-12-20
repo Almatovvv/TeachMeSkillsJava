@@ -1,4 +1,4 @@
-package com.techmeskills.lesson3.LessonHelper;
+package com.techmeskills.lesson3.lessonhelper;
 
 import java.util.Random;
 

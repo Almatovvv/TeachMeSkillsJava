@@ -1,8 +1,6 @@
 package com.techmeskills.lesson3.task1;
 
-import com.techmeskills.lesson3.LessonHelper.LessonHelper;
-
-import java.util.Arrays;
+import com.techmeskills.lesson3.lessonhelper.LessonHelper;
 
 public class Task1 {
 // Дано

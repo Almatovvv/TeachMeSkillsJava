@@ -1,6 +1,6 @@
 package com.techmeskills.lesson3.task3;
 
-import com.techmeskills.lesson3.LessonHelper.LessonHelper;
+import com.techmeskills.lesson3.lessonhelper.LessonHelper;
 
 public class Task3 {
     //Дано

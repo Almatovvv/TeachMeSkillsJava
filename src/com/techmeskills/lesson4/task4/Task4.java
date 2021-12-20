@@ -1,15 +1,13 @@
-package com.techmeskills.lesson4.task1;
+package com.techmeskills.lesson4.task4;
 
 import com.techmeskills.lesson4.lessonhelper.LessonHelper;
 
-
-public class Task1 {
+public class Task4 {
     //Дано
     //Создаём квадратную матрицу, размер вводим с клавиатуры. Заполняем
     //случайными числами в диапазоне от 0 до 50. И выводим на консоль(в виде
     //матрицы).
-    //1)Почитать сумму четных элементов стоящих на главной диагонали.
-
+    //4)Посчитать сумму четных элементов стоящих над побочной диагональю (не включительно)
 
     public static void main(String[] args) {
         LessonHelper lp = new LessonHelper();
@@ -25,20 +23,21 @@ public class Task1 {
         //Печать массива в виде матрицы
         lp.printArrayElementsAsMatrix(arrayOne);
 
-        //Печать суммы четных чисел по главной диагонали
-        System.out.println("Сумма четных чисел по главной диагонали: " + countSumOfEvenValuesByMainDiagonal(arrayOne, userInput));
+        //Вывод суммы четных чисел выше побочной диагонали
+        System.out.println("Вывод суммы четных чисел над побочной диагональю не включительно");
+        System.out.println(countSumOfEvenNumbersAboveAntiDiagonal(arrayOne));
 
     }
 
-    public static int countSumOfEvenValuesByMainDiagonal(int[][] array, int arrayDimensionNum) {
+    public static int countSumOfEvenNumbersAboveAntiDiagonal(int[][] matrix) {
         int sumOfEvenNumbers = 0;
-        for (int i = 0; i < arrayDimensionNum; i++) {
-            if (array[i][i] % 2 == 0 && array[i][i] != 0) {
-                sumOfEvenNumbers += array[i][i];
+        for (int i = 0; i < matrix.length - 1; i++) {
+            for (int j = 0; j < matrix[i].length - i - 1; j++) {
+                if (matrix[i][j] % 2 == 0) {
+                    sumOfEvenNumbers += matrix[i][j];
+                }
             }
         }
         return sumOfEvenNumbers;
     }
-
-
 }

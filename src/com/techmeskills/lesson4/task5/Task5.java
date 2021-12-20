@@ -1,13 +1,15 @@
-package com.techmeskills.lesson4.task2;
+package com.techmeskills.lesson4.task5;
 
 import com.techmeskills.lesson4.lessonhelper.LessonHelper;
 
-public class Task2 {
+import java.util.Arrays;
+
+public class Task5 {
     //Дано
     //Создаём квадратную матрицу, размер вводим с клавиатуры. Заполняем
     //случайными числами в диапазоне от 0 до 50. И выводим на консоль(в виде
     //матрицы).
-    //2)Вывести нечетные элементы находящиеся под главной
+    //4)Посчитать сумму четных элементов стоящих над побочной диагональю (не включительно)
 
     public static void main(String[] args) {
         LessonHelper lp = new LessonHelper();
@@ -23,18 +25,20 @@ public class Task2 {
         //Печать массива в виде матрицы
         lp.printArrayElementsAsMatrix(arrayOne);
 
-        //Вывод нечетных чисел на главной диагонали и ниже
-        System.out.println("Вывод нечечтных чисел на главной диагонали и ниже");
-        printOddValuesUnderMainDiagonal(arrayOne, userInput);
-
+        //Транспонирование матрицы и вывод результата
+        System.out.println("Транспонирование матрицы");
+        lp.printArrayElementsAsMatrix(transposeMatrix(arrayOne));
 
     }
 
-    public static void printOddValuesUnderMainDiagonal(int[][] array, int arrayDimensionNum) {
-        for (int i = 0; i < arrayDimensionNum; i++) {
-            for (int j = 0; j <= i; j++) {
-                if (array[i][j] % 2 == 1) System.out.print(array[i][j] + " ");
+    public static int[][] transposeMatrix(int[][] matrix) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = i + 1; j < matrix[i].length; j++) {
+                int temp = matrix[i][j];
+                matrix[i][j] = matrix[j][i];
+                matrix[j][i] = temp;
             }
         }
+        return matrix;
     }
 }

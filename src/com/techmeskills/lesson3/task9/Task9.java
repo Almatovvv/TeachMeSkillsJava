@@ -1,6 +1,6 @@
 package com.techmeskills.lesson3.task9;
 
-import com.techmeskills.lesson3.LessonHelper.LessonHelper;
+import com.techmeskills.lesson3.lessonhelper.LessonHelper;
 
 import java.util.Scanner;
 
